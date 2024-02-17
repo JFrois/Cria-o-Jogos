@@ -7,8 +7,6 @@ def jogar():
     print("Boas vinda ao nosso jogo de adivinhação, aqui você terá uma experiência única)")
     print("******************************************************************************")
 
-    # Definição de variáveis para o número sorteado,
-    # rodada e chance de jogar (Jogo é limitado de chances)
 
     numeroSorteado = random.randrange(1, 101)
     chances = 0
@@ -25,8 +23,6 @@ def jogar():
     else:
         chances = 5
 
-    # Laço de repetição com o (for in range), onde adicionamos o 1 para inicio até o limite que são as
-    # chances definidas e ao acrescentar o "+ 1 " para ir até o limite de chaces
     for rodada in range(1, chances + 1):
         print("Tentativa {} de {}".format(rodada, chances))
         tentativa = int(input("Por favor digite seu número entre 1 e 100: "))
@@ -35,12 +31,12 @@ def jogar():
         if (tentativa < 1 or tentativa > 100):
             print("Você digitou um número diferente do pedido, por favor digite um número entre 1 e 100")
             continue
-        # Definição de acerto, maior ou menor dentro do nosso código para comparação
+    
         acertou = tentativa == numeroSorteado
         maior = tentativa > numeroSorteado
         menor = tentativa < numeroSorteado
 
-        # Seguimento com o IF, ELSE e ELIF para as rodadas
+     
         if (acertou):
             print("Você acertou! Meus parabéns! Você ganhou {} pontos!)".format(pontos))
             break
